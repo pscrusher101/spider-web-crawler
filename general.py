@@ -3,7 +3,7 @@ import os
 # for each website we crawl we create a new folder
 def create_project_dir(directory):
     if not os.path.exists(directory):
-        print('creating project ' + directory)
+        print('Creating project ' + directory)
         os.makedirs(directory)
 
 # create queue and crawled files
@@ -25,7 +25,7 @@ def write_file(path, data):
 # add data onto an existing file
 def append_to_file(path, data):
     with open(path, 'a') as file:
-        file.write(data + '/n')
+        file.write(data + '\n')
 
 #delete the contents of a file
 def delete_file_contents(path):
@@ -37,7 +37,7 @@ def file_to_set(file_name):
     results = set()
     with open(file_name, 'rt') as f:
         for line in f:
-            results.add(line.replace('/n', ''))
+            results.add(line.replace('\n', ''))
     return results
 
 # iterate through a set,each item will be new line in the file
